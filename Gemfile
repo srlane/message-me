@@ -70,3 +70,4 @@ gem 'will_paginate-bootstrap4'
 gem 'rails-controller-testing'
 
 gem 'semantic-ui-sass'
+gem 'hirb'

@@ -709,3 +709,125 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 55169)
 
 
+Started GET "/login" for ::1 at 2019-11-01 10:21:50 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 122)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 55101)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:23:25 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 120)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.0ms | Allocations: 55156)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:24:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 125)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 55146)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:24:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 121)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 55136)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:25:03 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 124)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 192)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.0ms | Allocations: 55230)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:25:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 53729)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:25:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 53736)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:25:27 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 124)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 187)
+Completed 200 OK in 53ms (Views: 51.5ms | ActiveRecord: 0.0ms | Allocations: 55251)
+
+
+Started GET "/" for ::1 at 2019-11-01 10:25:47 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 157)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 62)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.0ms | Allocations: 54564)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:25:50 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 61)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms | Allocations: 53767)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:26:57 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 119)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 234)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 55302)
+
+
+Started GET "/" for ::1 at 2019-11-01 10:27:03 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 157)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 88)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms | Allocations: 54599)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191101153148)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191101153148"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-01 15:33:40.002307"], ["updated_at", "2019-11-01 15:33:40.002307"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "mashrur"], ["password_digest", "$2a$12$UDh9XQ5SkIqiDvZl.Bo7xuzVt2zEuUkMtcTs4GThSLzOeNTOg0FXe"], ["created_at", "2019-11-01 15:34:33.338687"], ["updated_at", "2019-11-01 15:34:33.338687"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
