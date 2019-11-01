@@ -1238,3 +1238,154 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms | Allocations: 57993)
 
 
+Started POST "/login" for ::1 at 2019-11-01 11:11:54 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"B9/6ISzsJM33y+LquAYBi5QuaLqby3yBq1PPcSL40yZOS03dWpiPad3OX70Qu3V5KChb7V+WLvuT8eW9l68RBg==", "session"=>{"username"=>"mashrur", "password"=>"[FILTERED]"}, "button"=>""}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2117)
+
+
+  
+NoMethodError (undefined method `downcase' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for ::1 at 2019-11-01 11:12:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"B9/6ISzsJM33y+LquAYBi5QuaLqby3yBq1PPcSL40yZOS03dWpiPad3OX70Qu3V5KChb7V+WLvuT8eW9l68RBg==", "session"=>{"username"=>"mashrur", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 0.5ms | Allocations: 78009)
+
+
+  
+NoMethodError (undefined method `user_path' for #<SessionsController:0x00007f22cae14300>):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2019-11-01 11:13:18 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"B9/6ISzsJM33y+LquAYBi5QuaLqby3yBq1PPcSL40yZOS03dWpiPad3OX70Qu3V5KChb7V+WLvuT8eW9l68RBg==", "session"=>{"username"=>"mashrur", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 194ms (ActiveRecord: 0.5ms | Allocations: 7408)
+
+
+Started GET "/login" for ::1 at 2019-11-01 11:13:23 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 339)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 61)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms | Allocations: 54243)
+
+
+Started POST "/login" for ::1 at 2019-11-01 11:13:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"p8Iid++Li1MHEDHr7fpInHByi1iwnEaSUP9KDR0ldBbuVpWLmf8g9y0VjLxFRzxuzHS4D3TBFOhoXWDBqHK2Ng==", "session"=>{"username"=>"mashrur", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 217ms (ActiveRecord: 0.4ms | Allocations: 978)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:07:07 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 339)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 61)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 54234)
+
+
+Started POST "/login" for ::1 at 2019-11-01 12:07:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"h99+p1twunZTugu66FfQWrBBvzuSCElOQ/DMu1IPo4nOS8lbLQQR0nm/tu1A6qSoDEeMbFZVGzR7UuZ351hhqQ==", "session"=>{"username"=>"mashrur", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3001/
+Completed 302 Found in 199ms (ActiveRecord: 0.2ms | Allocations: 5096)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:07:12 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 1.6ms | Allocations: 1621)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 5694)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 89)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.8ms | Allocations: 60553)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:12:56 -0500
+  
+SyntaxError (/home/srlane/Notes/ruby-projects/rails-projects/message_me/config/routes.rb:8: unterminated string meets end of file
+/home/srlane/Notes/ruby-projects/rails-projects/message_me/config/routes.rb:8: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:8: unterminated string meets end of file
+config/routes.rb:8: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:8: unterminated string meets end of file
+config/routes.rb:8: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:8: unterminated string meets end of file
+config/routes.rb:8: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2019-11-01 12:13:23 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 5.5ms | Allocations: 5348)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 9302)
+  Rendered layouts/_navigation.html.erb (Duration: 129.0ms | Allocations: 110288)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.3ms | Allocations: 175062)
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x00007f22cbc27348>:0x00007f22cbc25a70>
+Did you mean?  logger?):
+     8:       <div class="ui dropdown item">
+     9:         Account <i class="dropdown icon"></i>
+    10:         <div class="menu">
+    11:           <% if logged_in? %>
+    12:             <%= link_to "Log out", logout_path, method: :delete, class: "item" %>
+    13:           <% else %>
+    14:             <%= link_to "Log in", login_path, class: "item" %>
+  
+app/views/layouts/_navigation.html.erb:11
+app/views/layouts/application.html.erb:15
+Started GET "/" for ::1 at 2019-11-01 12:15:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 6.5ms | Allocations: 5505)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 9515)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 696)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 1.3ms | Allocations: 64620)
+
+
+Started DELETE "/logout" for ::1 at 2019-11-01 12:15:13 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"w+hKKtEkHJcHPaJt7QF9L1pKbT76R9t+f0uzSi395E2KfP3Wp1C3My04HzpFvAnd5kxeaT4aiQRH6ZmGmKombQ=="}
+Redirected to http://localhost:3001/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 428)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:15:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 601)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 98)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 55060)
+
+
