@@ -1485,3 +1485,1820 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.0ms | Allocations: 53653)
 
 
+Started GET "/" for ::1 at 2019-11-01 12:27:40 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 1.1ms | Allocations: 710)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1425)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 119)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.2ms | Allocations: 54753)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:36 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms | Allocations: 72661)
+
+
+  
+NoMethodError (undefined method `reqire_user' for #<ChatroomController:0x00007f22cacf96f0>
+Did you mean?  require_user):
+  
+activesupport (6.0.0) lib/active_support/callbacks.rb:429:in `block in make_lambda'
+activesupport (6.0.0) lib/active_support/callbacks.rb:201:in `block (2 levels) in halting'
+actionpack (6.0.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.0) lib/active_support/callbacks.rb:202:in `block in halting'
+activesupport (6.0.0) lib/active_support/callbacks.rb:514:in `block in invoke_before'
+activesupport (6.0.0) lib/active_support/callbacks.rb:514:in `each'
+activesupport (6.0.0) lib/active_support/callbacks.rb:514:in `invoke_before'
+activesupport (6.0.0) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.0) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.0) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.0) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.0) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.0) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.0) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.0) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 438)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 396)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:50 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 399)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:54 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:28:55 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 396)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:05 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:10 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 537)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:18 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 351)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 349)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 351)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 349)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:29 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:29:48 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 7.0ms | Allocations: 7398)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 12067)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 172)
+Completed 200 OK in 688ms (Views: 685.5ms | ActiveRecord: 0.9ms | Allocations: 1377036)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:29:51 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 1.2ms | Allocations: 711)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1434)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 125)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.2ms | Allocations: 54778)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 400)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 452)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 351)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 360)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-01 12:30:07 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:30:16 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 7.1ms | Allocations: 5505)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 9519)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 1.1ms | Allocations: 63572)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:31:40 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 4.3ms | Allocations: 5505)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 9499)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.8ms | Allocations: 63553)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:32:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 457)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:32:02 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 975)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 54905)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:32:24 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 339)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 98)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms | Allocations: 53743)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:32:28 -0500
+Processing by ChatroomController#index as HTML
+Redirected to http://localhost:3001/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 440)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:32:28 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 331)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.0ms | Allocations: 53616)
+
+
+Started POST "/login" for ::1 at 2019-11-01 12:32:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"EnDBUqbFD3VUC0g6H+bGwgUxNJb47QsfweYKH2w2DzNb5Hau0LGk0X4O9W23W7IwuTcHwTywWWX5RCDT2WHNEw==", "session"=>{"username"=>"mashrur", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mashrur"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3001/
+Completed 302 Found in 211ms (ActiveRecord: 13.4ms | Allocations: 5465)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:32:43 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 1.1ms | Allocations: 1466)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 5255)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 109)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.5ms | Allocations: 59748)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:32:59 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 332)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 627)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.1ms | Allocations: 54170)
+
+
+Started GET "/login" for ::1 at 2019-11-01 12:34:45 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://localhost:3001/
+Filter chain halted as :logged_in_redirect rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 5380)
+
+
+Started GET "/" for ::1 at 2019-11-01 12:34:45 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 1.3ms | Allocations: 1425)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 5213)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.6ms | Allocations: 59647)
+
+
