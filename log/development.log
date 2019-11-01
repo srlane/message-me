@@ -668,3 +668,44 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 1440ms (Views: 1438.8ms | ActiveRecord: 0.0ms | Allocations: 98287)
 
 
+Started GET "/" for ::1 at 2019-11-01 10:12:43 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 282)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 115)
+Completed 200 OK in 792ms (Views: 786.4ms | ActiveRecord: 0.0ms | Allocations: 1362677)
+
+
+Started GET "/" for ::1 at 2019-11-01 10:13:39 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 159)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 55186)
+
+
+Started GET "/" for ::1 at 2019-11-01 10:15:01 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 155)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 55165)
+
+
+Started GET "/" for ::1 at 2019-11-01 10:16:55 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 158)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 55181)
+
+
+Started GET "/" for ::1 at 2019-11-01 10:17:40 -0500
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 154)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 105)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 55169)
+
+
