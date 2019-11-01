@@ -3441,3 +3441,619 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.2ms | Allocations: 56069)
 
 
+Started GET "/" for ::1 at 2019-11-01 13:32:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 1.5ms | Allocations: 2077)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3121)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/srlane/Notes/ruby-projects/rails-projects/message_me/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 81)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 1864ms (Views: 1853.4ms | ActiveRecord: 0.3ms | Allocations: 66339)
+
+
+Started GET "/cable" for ::1 at 2019-11-01 13:32:03 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2019-11-01 13:32:03 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2019-11-01 13:35:56 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 2.1ms | Allocations: 2078)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3122)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/srlane/Notes/ruby-projects/rails-projects/message_me/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 81)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 1261ms (Views: 1251.8ms | ActiveRecord: 1.0ms | Allocations: 66622)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:04 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:04.032817"], ["updated_at", "2019-11-01 18:36:04.032817"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 3.7ms | Allocations: 6533)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:08 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:08.731278"], ["updated_at", "2019-11-01 18:36:08.731278"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.4ms | Allocations: 4253)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:09 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:09.354770"], ["updated_at", "2019-11-01 18:36:09.354770"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 36ms (ActiveRecord: 3.8ms | Allocations: 4257)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:13 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:13.130690"], ["updated_at", "2019-11-01 18:36:13.130690"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 3.8ms | Allocations: 4253)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:13 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.1ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:13.280827"], ["updated_at", "2019-11-01 18:36:13.280827"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.3ms | Allocations: 4254)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:13 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:13.922936"], ["updated_at", "2019-11-01 18:36:13.922936"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 17ms (ActiveRecord: 4.8ms | Allocations: 4253)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:14 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.1ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:14.244071"], ["updated_at", "2019-11-01 18:36:14.244071"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.2ms | Allocations: 4255)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:14 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:14.403297"], ["updated_at", "2019-11-01 18:36:14.403297"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 3.6ms | Allocations: 4247)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:14 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:14.562357"], ["updated_at", "2019-11-01 18:36:14.562357"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.4ms | Allocations: 4251)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:14 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:14.698824"], ["updated_at", "2019-11-01 18:36:14.698824"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.4ms | Allocations: 4251)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:14 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:14.946828"], ["updated_at", "2019-11-01 18:36:14.946828"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.3ms | Allocations: 4246)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:15 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:15.247091"], ["updated_at", "2019-11-01 18:36:15.247091"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.3ms | Allocations: 4252)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:15 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:15.634832"], ["updated_at", "2019-11-01 18:36:15.634832"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 18ms (ActiveRecord: 5.4ms | Allocations: 4247)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:16 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:16.158971"], ["updated_at", "2019-11-01 18:36:16.158971"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 18ms (ActiveRecord: 4.6ms | Allocations: 4251)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:16 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:16.573124"], ["updated_at", "2019-11-01 18:36:16.573124"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 19ms (ActiveRecord: 4.9ms | Allocations: 4250)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:36:16 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a58kOL1bpcu2AGPizKMhntQ+Ci6EhE4j1J61mp3KLuEiC5PEyy8Ob5wF3rVkHlVsaDg5eUDZHFnsPJ9WKJ3swQ==", "message"=>{"body"=>"A test"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "A test"], ["user_id", 1], ["created_at", "2019-11-01 18:36:16.818858"], ["updated_at", "2019-11-01 18:36:16.818858"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"A test"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 3.3ms | Allocations: 4251)
+
+
+Started GET "/" for ::1 at 2019-11-01 13:40:09 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [18 times] (Duration: 19.5ms | Allocations: 11723)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 12848)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.1ms | Allocations: 51512)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:11
+Started GET "/" for ::1 at 2019-11-01 13:45:56 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [18 times] (Duration: 11.2ms | Allocations: 11723)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 12849)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/srlane/Notes/ruby-projects/rails-projects/message_me/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 1169ms (Views: 1166.6ms | ActiveRecord: 0.5ms | Allocations: 69163)
+
+
+Started GET "/cable" for ::1 at 2019-11-01 13:45:58 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2019-11-01 13:45:58 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for ::1 at 2019-11-01 13:46:07 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"FjAz2UWEIl9tPo3BmYGaV0q9S+65b/AfV+Fkg2m8KDBfpIQlM/CJ+0c7MJYxPO6l9rt4uX0yomVvQ05P3OvqEA==", "message"=>{"body"=>"abc"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "abc"], ["user_id", 1], ["created_at", "2019-11-01 18:46:07.522278"], ["updated_at", "2019-11-01 18:46:07.522278"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"abc"}
+No template found for MessagesController#create, rendering head :no_content
+ChatroomChannel transmitting {"foo"=>"abc"} (via streamed from chatroom_channel)
+Completed 204 No Content in 9ms (ActiveRecord: 3.6ms | Allocations: 4408)
+
+
+Started POST "/message" for ::1 at 2019-11-01 13:46:30 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"FjAz2UWEIl9tPo3BmYGaV0q9S+65b/AfV+Fkg2m8KDBfpIQlM/CJ+0c7MJYxPO6l9rt4uX0yomVvQ05P3OvqEA==", "message"=>{"body"=>"ghi"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "ghi"], ["user_id", 1], ["created_at", "2019-11-01 18:46:30.997184"], ["updated_at", "2019-11-01 18:46:30.997184"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"ghi"}
+No template found for MessagesController#create, rendering head :no_content
+ChatroomChannel transmitting {"foo"=>"ghi"} (via streamed from chatroom_channel)
+Completed 204 No Content in 8ms (ActiveRecord: 3.5ms | Allocations: 4386)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMessage Destroy (5.3ms)[0m  [1m[31mDELETE FROM "messages"[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-11-01 13:47:34 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 907)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 78)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.5ms | Allocations: 54811)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-11-01 13:47:34 -0500
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2019-11-01 13:47:34 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2019-11-01 13:47:34 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for ::1 at 2019-11-01 13:47:42 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"CSgoD/lMbPWvly4I5KeW7FrRldcefz65TemjYBJsZuZAvJ/zjzjHUYWSk19MGuIe5temgNoibMN1S4mspzukxg==", "message"=>{"body"=>"Hi, this is a test message"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Hi, this is a test message"], ["user_id", 1], ["created_at", "2019-11-01 18:47:42.025777"], ["updated_at", "2019-11-01 18:47:42.025777"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"Hi, this is a test message"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 18ms (ActiveRecord: 4.8ms | Allocations: 4288)
+
+
+ChatroomChannel transmitting {"foo"=>"Hi, this is a test message"} (via streamed from chatroom_channel)
+Started POST "/message" for ::1 at 2019-11-01 13:47:45 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"CSgoD/lMbPWvly4I5KeW7FrRldcefz65TemjYBJsZuZAvJ/zjzjHUYWSk19MGuIe5temgNoibMN1S4mspzukxg==", "message"=>{"body"=>"Hi, this is a test message"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Hi, this is a test message"], ["user_id", 1], ["created_at", "2019-11-01 18:47:45.034607"], ["updated_at", "2019-11-01 18:47:45.034607"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"Hi, this is a test message"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 3.4ms | Allocations: 4268)
+
+
+ChatroomChannel transmitting {"foo"=>"Hi, this is a test message"} (via streamed from chatroom_channel)
+Started GET "/" for ::1 at 2019-11-01 13:49:03 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 1.6ms | Allocations: 1308)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2272)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/srlane/Notes/ruby-projects/rails-projects/message_me/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 78)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 1248ms (Views: 1246.3ms | ActiveRecord: 0.3ms | Allocations: 57651)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-11-01 13:49:04 -0500
+ChatroomChannel stopped streaming from chatroom_channel
+Started POST "/message" for ::1 at 2019-11-01 13:49:09 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"s5dB6B0+ddjmD/xYWs1ByK3MsPbBb++OhiGCX5ulIBr6A/YUa0refMwKQQ/ycDU6EcqDoQUyvfS+g6iTLvLiOg==", "message"=>{"body"=>"a"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "a"], ["user_id", 1], ["created_at", "2019-11-01 18:49:09.508898"], ["updated_at", "2019-11-01 18:49:09.508898"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"a"}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 3.4ms | Allocations: 4266)
+
+
+Started GET "/" for ::1 at 2019-11-01 13:49:23 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [3 times] (Duration: 2.5ms | Allocations: 1959)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2933)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/srlane/Notes/ruby-projects/rails-projects/message_me/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 1279ms (Views: 1277.6ms | ActiveRecord: 0.3ms | Allocations: 58086)
+
+
+Started GET "/cable" for ::1 at 2019-11-01 13:49:24 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2019-11-01 13:49:24 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for ::1 at 2019-11-01 13:49:27 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"2bQR+ufIKC5pS1gVccOUq1ncTJ/IM23n5O4bTE05FWOQIKYGkbyDikNO5ULZfuBZ5dp/yAxuP53cTDGA+G7XQw==", "message"=>{"body"=>"b"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "b"], ["user_id", 1], ["created_at", "2019-11-01 18:49:27.613807"], ["updated_at", "2019-11-01 18:49:27.613807"]]
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:7:in `create'
+[ActionCable] Broadcasting to chatroom_channel: {:foo=>"b"}
+No template found for MessagesController#create, rendering head :no_content
+ChatroomChannel transmitting {"foo"=>"b"} (via streamed from chatroom_channel)
+Completed 204 No Content in 8ms (ActiveRecord: 3.5ms | Allocations: 4380)
+
+
+Started GET "/" for ::1 at 2019-11-01 13:52:07 -0500
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [4 times] (Duration: 4.9ms | Allocations: 2610)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3579)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 78)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.4ms | Allocations: 57481)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2019-11-01 13:52:07 -0500
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2019-11-01 13:52:07 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2019-11-01 13:52:07 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
