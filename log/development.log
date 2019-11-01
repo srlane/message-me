@@ -1046,3 +1046,195 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.2ms | Allocations: 55224)
 
 
+Started GET "/" for ::1 at 2019-11-01 10:57:14 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 3.0ms | Allocations: 850)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1872)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 230)
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.7ms | Allocations: 57027)
+
+
+Started GET "/login" for ::1 at 2019-11-01 10:57:19 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1112)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2266)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 align="Center">Welcome to MessageMe - <em>a complete Chat App</em></h1>
+
+<h4 class="ui center aligned icon header">
+  <i class="circular orange power icon"></i>
+  Log in to continue
+</h4>
+
+<div class="ui placeholder segment">
+  <div class="ui two column very relaxed stackable grid">
+    <div class="column">
+      <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) %>
+        <div class="field">
+          <%= f.label :username, "Username" %>
+          <div class="ui left icon input">
+            <%= f.text_field :username, placeholder: "Username" %>
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :password, "Password" %>
+          <div class="ui left icon input">
+            <%= f.password_field :password, placeholder: "Password" %>
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <%= f.button "Login", class: "ui orange submit button" %>
+      <% end %>
+    </div>
+    <div class="middle aligned column">
+      <div class="ui big orange button">
+        <i class="signup icon"></i>
+        Sign Up
+      </div>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    Or
+  </div>
+</div>
+
+):
+1:    <h1 align="Center">Welcome to MessageMe - <em>a complete Chat App</em></h1>
+2:    
+3:    <h4 class="ui center aligned icon header">
+4:      <i class="circular orange power icon"></i>
+5:      Log in to continue
+6:    </h4>
+7:    
+8:    <div class="ui placeholder segment">
+9:      <div class="ui two column very relaxed stackable grid">
+10:        <div class="column">
+11:          <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) %>
+12:            <div class="field">
+13:              <%= f.label :username, "Username" %>
+14:              <div class="ui left icon input">
+15:                <%= f.text_field :username, placeholder: "Username" %>
+16:                <i class="user icon"></i>
+17:              </div>
+18:            </div>
+19:            <div class="field">
+20:              <%= f.label :password, "Password" %>
+21:              <div class="ui left icon input">
+22:                <%= f.password_field :password, placeholder: "Password" %>
+23:                <i class="lock icon"></i>
+24:              </div>
+25:            </div>
+26:            <%= f.button "Login", class: "ui orange submit button" %>
+27:          <% end %>
+28:        </div>
+29:        <div class="middle aligned column">
+30:          <div class="ui big orange button">
+31:            <i class="signup icon"></i>
+32:            Sign Up
+33:          </div>
+34:        </div>
+35:      </div>
+36:      <div class="ui vertical divider">
+37:        Or
+38:      </div>
+39:    </div>
+  
+app/views/sessions/new.html.erb:42: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:42: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:42: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:42: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:42: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:42: syntax error, unexpected end, expecting end-of-input
+Started GET "/login" for ::1 at 2019-11-01 11:00:14 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1049)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2372)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 align="Center">Welcome to MessageMe - <em>a complete Chat App</em></h1>
+
+<h4 class="ui center aligned icon header">
+  <i class="circular orange power icon"></i>
+  Log in to continue
+</h4>
+
+<div class="ui placeholder segment">
+  <div class="ui two column very relaxed stackable grid">
+    <div class="column">
+      <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) %>
+        
+      <% end %>
+    </div>
+    <div class="middle aligned column">
+      <div class="ui big orange button">
+        <i class="signup icon"></i>
+        Sign Up
+      </div>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    Or
+  </div>
+</div>
+
+):
+1:    <h1 align="Center">Welcome to MessageMe - <em>a complete Chat App</em></h1>
+2:    
+3:    <h4 class="ui center aligned icon header">
+4:      <i class="circular orange power icon"></i>
+5:      Log in to continue
+6:    </h4>
+7:    
+8:    <div class="ui placeholder segment">
+9:      <div class="ui two column very relaxed stackable grid">
+10:        <div class="column">
+11:          <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) %>
+12:            
+13:          <% end %>
+14:        </div>
+15:        <div class="middle aligned column">
+16:          <div class="ui big orange button">
+17:            <i class="signup icon"></i>
+18:            Sign Up
+19:          </div>
+20:        </div>
+21:      </div>
+22:      <div class="ui vertical divider">
+23:        Or
+24:      </div>
+25:    </div>
+  
+app/views/sessions/new.html.erb:28: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:28: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:28: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:28: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:28: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:28: syntax error, unexpected end, expecting end-of-input
+Started GET "/login" for ::1 at 2019-11-01 11:00:33 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 104)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 231)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 55249)
+
+
+Started GET "/login" for ::1 at 2019-11-01 11:02:38 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2964)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 213)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms | Allocations: 57993)
+
+
